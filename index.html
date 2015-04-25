@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Face tracker</title>
+		<meta charset="utf-8">
+  </head>
+  <body>
+    <div style="display: none;">
+      <video id="video"></video>
+      <canvas id="canvas" crossOrigin="anonymous" ></canvas>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://facedetection.jaysalvat.com/js/jquery.facedetection/dist/jquery.facedetection.min.js"></script>
+    <script src="detection.js" ></script>
+    <script>
+    $(document).ready(function(){
+      startdetection();
+    })
+    </script>
+  </body>
+</html>
