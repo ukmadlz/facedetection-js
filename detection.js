@@ -1,10 +1,11 @@
-var streaming = false,
-      video        = document.querySelector('#video'),
-      canvas       = document.querySelector('#canvas'),
-      startbutton  = document.querySelector('#startbutton'),
+var streaming     = false,
+      video       = document.querySelector('#video'),
+      canvas      = document.querySelector('#canvas'),
+      startbutton = document.querySelector('#startbutton'),
       continuous  = document.querySelector('#startmanybutton'),
-      width = 320,
-      height = 0;
+      width       = 320,
+      height      = 0,
+      beaconId    = 1;
 
 navigator.getMedia = ( navigator.getUserMedia ||
                        navigator.webkitGetUserMedia ||
@@ -53,7 +54,7 @@ function takepicture() {
           dataURL = canvas.toDataURL('image/jpeg');
           $.ajax({
             type: "POST",
-            url: "http://battle.curtish.me/detect64",
+            url: "http://battle.curtish.me/detect64?beaconId="+beaconId,
             data: {
                imgBase64: dataURL
             }
